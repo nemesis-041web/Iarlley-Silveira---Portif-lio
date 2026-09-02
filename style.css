@@ -1,0 +1,598 @@
+/* ==========================================================================
+   PORTFÓLIO IARLLEY GABRIEL - ESTILOS DIRETOS E ESTRUTURADOS
+   Paleta: Tons de Azul (Azul Noturno, Royal Blue, Azul Claro)
+   ========================================================================== */
+
+:root {
+    --bg: #0b1320;
+    --bg-card: #131f33;
+    --bg-card-alt: #1a2a44;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --accent: #60a5fa;
+    --border: #1e293b;
+    --font: 'Manrope', system-ui, sans-serif;
+    --font-display: 'Bricolage Grotesque', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+}
+
+.project-img-wrapper {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    
+    /* Fundo degradê azul + grade blueprint */
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 50% 30%, #172a46, #09111c);
+    background-size: 20px 20px, 20px 20px, 100% 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
+}
+
+.project-card:hover .project-img-wrapper {
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Estilização dos Ícones */
+.card-icon {
+    font-size: 3rem;
+    color: var(--accent); /* Azul claro do tema */
+    transition: transform 0.2s, color 0.2s;
+}
+
+.project-card:hover .card-icon {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Destaque sutil para o ícone do YouTube */
+.icon-youtube {
+    color: #f87171; /* Vermelho suave */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.logo {
+    font-family: var(--font-display);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.border-top {
+    border-top: 1px solid var(--border);
+}
+
+.section {
+    padding: 4rem 0;
+    scroll-margin-top: 65px;
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 0.75rem;
+}
+
+/* Header */
+.header {
+    background-color: rgba(11, 19, 32, 0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.logo {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo-mark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: 8.5rem;
+    height: 2rem;
+}
+
+.logo-mark::before {
+    position: absolute;
+    top: 50%;
+    right: 0.15rem;
+    left: 0.15rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent);
+    content: '';
+    opacity: 0.75;
+}
+
+.logo-mark i {
+    position: relative;
+    z-index: 1;
+    color: var(--accent);
+    font-size: 1.15rem;
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.logo-mark i:nth-child(2),
+.logo-mark i:nth-child(4) {
+    color: var(--primary);
+}
+
+.logo:hover .logo-mark i {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Início / Hero */
+.hero-section {
+    padding: 4.5rem 0 3.5rem;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    background-color: rgba(37, 99, 235, 0.15);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin: 0.15rem 0 1rem;
+}
+
+.hero-text h1 {
+    max-width: 700px;
+    font-size: 2.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.hero-role {
+    color: var(--accent);
+    font-size: 0.72em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.summary {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1.3rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+}
+
+/* Foto de perfil */
+.avatar-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--bg-card);
+    box-shadow: 14px 14px 0 rgba(37, 99, 235, 0.12);
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-fallback {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+/* Sobre Mim */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.sobre-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.sobre-item h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.sobre-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.skill-card ul {
+    list-style: none;
+}
+
+.skill-card li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skill-card li:last-child {
+    border-bottom: none;
+}
+
+/* Trabalhos */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.project-type {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.project-media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin: 0 -0.25rem 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: linear-gradient(145deg, #142957, #0d1525);
+}
+
+.project-media::before {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(96, 165, 250, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+    content: '';
+}
+
+.project-media video,
+.project-media img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-placeholder video {
+    background-color: #080f1c;
+}
+
+.youtube-media {
+    justify-content: flex-start;
+    gap: 0.8rem;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #251d2b, #111a2d 70%);
+}
+
+.youtube-media::after {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 0.8rem;
+    width: 5rem;
+    height: 3rem;
+    border: 1px solid rgba(255, 72, 72, 0.35);
+    border-radius: 4px;
+    content: '';
+    transform: rotate(-7deg);
+}
+
+.youtube-media i {
+    position: relative;
+    z-index: 1;
+    color: #ff5454;
+    font-size: 2.3rem;
+    text-shadow: 0 0 18px rgba(255, 84, 84, 0.35);
+}
+
+.youtube-media span {
+    position: relative;
+    z-index: 1;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.5;
+}
+
+.youtube-media strong {
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.media-note {
+    position: absolute;
+    z-index: 2;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.media-note strong {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: #ffffff;
+}
+
+/* Contato */
+.contato-wrapper {
+    max-width: 620px;
+}
+
+.contato-info p {
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.contato-info strong {
+    color: #ffffff;
+}
+
+.contato-info a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+}
+
+.form-simples {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: var(--font);
+    font-size: 0.88rem;
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--primary);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-layout, .contato-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-avatar {
+        order: -1;
+    }
+
+    .avatar-box {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
